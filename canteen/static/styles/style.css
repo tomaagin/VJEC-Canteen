@@ -1,0 +1,844 @@
+/* ==============================
+   RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* ==============================
+   LOGIN BACKGROUND
+================================= */
+
+.login-bg {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 10% 20%,
+            rgba(0, 198, 255, 0.15),
+            transparent 30%),
+        radial-gradient(circle at 90% 80%,
+            rgba(94, 53, 177, 0.18),
+            transparent 30%),
+        #070b14;
+
+    color: white;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* Background decorative circles */
+
+.login-bg::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: #00c6ff;
+
+    filter: blur(150px);
+
+    opacity: 0.15;
+
+    top: -150px;
+    left: -100px;
+}
+
+.login-bg::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: #7b2cff;
+
+    filter: blur(150px);
+
+    opacity: 0.15;
+
+    bottom: -150px;
+    right: -100px;
+}
+
+
+/* ==============================
+   LOGIN CONTAINER
+================================= */
+
+.login-container {
+
+    width: 410px;
+
+    padding: 40px;
+
+    position: relative;
+    z-index: 2;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* ==============================
+   HEADER
+================================= */
+
+.login-header {
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+
+/* Logo */
+
+.logo {
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: linear-gradient(135deg,
+            #00c6ff,
+            #7b2cff);
+
+    font-size: 25px;
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px rgba(0, 198, 255, 0.25);
+}
+
+
+.login-header h1 {
+
+    font-size: 28px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 2px;
+}
+
+
+.login-header h2 {
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: #00c6ff;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.login-header p {
+
+    margin-top: 15px;
+
+    color: #8f98a8;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
+   FORM
+================================= */
+
+.input-group {
+
+    margin-bottom: 20px;
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d8dce5;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    color: white;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+
+.input-group input::placeholder {
+
+    color: #626b7b;
+}
+
+
+.input-group input:focus {
+
+    border-color: #00c6ff;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 198, 255, 0.08);
+}
+
+
+/* ==============================
+   OPTIONS
+================================= */
+
+.login-options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 5px 0 25px;
+
+    font-size: 12px;
+
+    color: #858e9e;
+}
+
+
+.login-options label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.login-options input {
+
+    accent-color: #00c6ff;
+
+    cursor: pointer;
+}
+
+
+.login-options a {
+
+    color: #00c6ff;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+
+.login-options a:hover {
+
+    color: white;
+}
+
+
+/* ==============================
+   LOGIN BUTTON
+================================= */
+
+.login-btn {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(135deg,
+            #00c6ff,
+            #7b2cff);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: 0.3s ease;
+}
+
+
+.login-btn span {
+
+    font-size: 20px;
+
+    transition: 0.3s ease;
+}
+
+
+.login-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 198, 255, 0.2);
+}
+
+
+.login-btn:hover span {
+
+    transform: translateX(5px);
+}
+
+
+.login-btn:active {
+
+    transform: translateY(0);
+}
+
+
+/* ==============================
+   FOOTER
+================================= */
+
+.login-footer {
+
+    text-align: center;
+
+    margin-top: 28px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.login-footer p {
+
+    color: #727b8b;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+
+.register-btn {
+
+    color: #00c6ff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+.register-btn:hover {
+
+    color: white;
+
+}
+
+
+/* ==============================
+   MOBILE
+================================= */
+
+@media (max-width: 480px) {
+
+    .login-container {
+
+        width: calc(100% - 30px);
+
+        padding: 30px 25px;
+
+    }
+
+    .login-header h1 {
+
+        font-size: 24px;
+
+    }
+
+    .login-options {
+
+        font-size: 11px;
+
+    }
+
+}
+
+
+/* =========================================
+   VJEC CANTEEN - REGISTER PAGE
+========================================= */
+
+.register-bg {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 15px;
+
+    background:
+        radial-gradient(circle at 10% 15%,
+            rgba(0, 198, 255, 0.16),
+            transparent 30%),
+        radial-gradient(circle at 90% 85%,
+            rgba(123, 44, 255, 0.18),
+            transparent 30%),
+        #070b14;
+
+    color: white;
+
+    position: relative;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.register-bg::before {
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: #00c6ff;
+
+    filter: blur(150px);
+
+    opacity: 0.12;
+
+    top: -150px;
+    left: -100px;
+
+    pointer-events: none;
+}
+
+
+.register-bg::after {
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: #7b2cff;
+
+    filter: blur(150px);
+
+    opacity: 0.12;
+
+    bottom: -150px;
+    right: -100px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   REGISTER CARD
+========================================= */
+
+.register-container {
+
+    width: 430px;
+
+    padding: 40px;
+
+    position: relative;
+
+    z-index: 2;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.register-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.register-logo {
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: linear-gradient(135deg,
+            #00c6ff,
+            #7b2cff);
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px rgba(0, 198, 255, 0.25);
+}
+
+
+.register-header h1 {
+
+    font-size: 28px;
+
+    letter-spacing: 1px;
+
+    margin: 0 0 2px;
+}
+
+
+.register-header h2 {
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #00c6ff;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin: 0;
+}
+
+
+.register-header p {
+
+    margin-top: 14px;
+
+    color: #8f98a8;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   FORM INPUTS
+========================================= */
+
+.register-input {
+
+    margin-bottom: 18px;
+}
+
+
+.register-input label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d8dce5;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.register-input input {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    color: white;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+
+.register-input input::placeholder {
+
+    color: #626b7b;
+}
+
+
+.register-input input:hover {
+
+    border-color: rgba(255, 255, 255, 0.20);
+}
+
+
+.register-input input:focus {
+
+    border-color: #00c6ff;
+
+    background: rgba(0, 0, 0, 0.32);
+
+    box-shadow:
+        0 0 0 3px rgba(0, 198, 255, 0.08);
+}
+
+
+/* =========================================
+   REGISTER BUTTON
+========================================= */
+
+.register-submit {
+
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(135deg,
+            #00c6ff,
+            #7b2cff);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: all 0.3s ease;
+}
+
+
+.register-submit span {
+
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.register-submit:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 198, 255, 0.22);
+}
+
+
+.register-submit:hover span {
+
+    transform: translateX(5px);
+}
+
+
+.register-submit:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   LOGIN FOOTER
+========================================= */
+
+.register-footer {
+
+    text-align: center;
+
+    margin-top: 26px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.register-footer p {
+
+    color: #727b8b;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 9px;
+}
+
+
+.register-footer a {
+
+    color: #00c6ff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.register-footer a:hover {
+
+    color: white;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .register-bg {
+        padding: 25px 15px;
+    }
+
+    .register-container {
+
+        width: 100%;
+
+        padding: 30px 25px;
+
+        border-radius: 20px;
+    }
+
+    .register-header h1 {
+
+        font-size: 24px;
+    }
+
+    .register-header h2 {
+
+        font-size: 12px;
+
+        letter-spacing: 1.5px;
+    }
+
+}

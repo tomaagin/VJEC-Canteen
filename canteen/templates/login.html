@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VJEC Canteen Portal</title>
+
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+
+</head>
+
+<body class="login-bg">
+
+    <div class="login-container">
+
+        <div class="login-header">
+
+            <div class="logo">
+                V
+            </div>
+
+            <h1>VJEC</h1>
+
+            <h2>Canteen Portal</h2>
+
+            <p>
+                Welcome back! Please login to continue.
+            </p>
+
+        </div>
+
+
+        <div class="login-body">
+
+            <form action="" method="post">
+
+                {% csrf_token %}
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Admission Number
+                    </label>
+
+                    <input type="text" name="username" id="username" placeholder="Enter your admission number" required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+
+                </div>
+
+
+                <div class="login-options">
+
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+
+
+                </div>
+
+
+                <button type="submit" class="login-btn">
+                    Login
+                    <span>→</span>
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div class="login-footer">
+
+            <p>
+                NEW TO CANTEEN PORTAL?
+            </p>
+
+            <a href="{% url 'register' %}" class="register-btn">
+                Create an Account
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

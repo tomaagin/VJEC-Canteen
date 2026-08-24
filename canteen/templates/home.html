@@ -1,0 +1,193 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Canteen</title>
+
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}?v=2">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <h1>VJEC Canteen</h1>
+        </div>
+        <div class="nav-right">
+            {% if user.is_authenticated %}
+            <span>Welcome, {{ user.username }}!</span>
+            <a href="{% url 'login' %}" class="nav-link">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="nav-link">Login</a>
+            <a href="{% url 'register' %}" class="nav-link">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>🍴 College Canteen</h1>
+
+        <p>
+            Fresh Food • Affordable Prices • Great Taste
+        </p>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main class="container">
+
+        <div class="title">
+
+            <h2>Today's Food Menu</h2>
+
+            <p>
+                Check the available food items and their prices.
+            </p>
+
+        </div>
+
+
+        <!-- Food Table -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Food Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for food in food_items %}
+
+                    <tr>
+
+                        <!-- Food Name -->
+
+                        <td>
+
+                            <span class="food-name">
+                                {{ food.item_name }}
+                            </span>
+
+                        </td>
+
+                        <!-- Category -->
+
+                        <td>
+
+                            <span class="category">
+                                {{ food.category }}
+                            </span>
+
+                        </td>
+
+
+                        <!-- Price -->
+
+                        <td>
+
+                            <span class="price">
+                                ₹{{ food.price }}
+                            </span>
+
+                        </td>
+
+
+                        <!-- Stock -->
+
+                        <td>
+
+                            <span class="stock">
+                                {{ food.stock }}
+                            </span>
+
+                        </td>
+
+
+                        <!-- Status -->
+
+                        <td>
+
+                            {% if food.stock == "Available" %}
+
+                            <span class="available">
+                                ● Available
+                            </span>
+
+                            {% else %}
+
+                            <span class="out-stock">
+                                ● Out of Stock
+                            </span>
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+
+                    {% empty %}
+
+                    <tr>
+
+                        <td colspan="5" class="empty">
+
+                            No food items are currently available.
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 College Canteen
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
