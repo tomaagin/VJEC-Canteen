@@ -1,32 +1,22 @@
-/* =========================================
-   GLOBAL RESET
-========================================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #f4f7fc;
-    color: #172033;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #eef5f2;
+    color: #183d34;
 }
 
 
-/* =========================================
-   NAVIGATION BAR
-========================================= */
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
-    width: 100%;
-    height: 72px;
+    height: 70px;
 
     display: flex;
     align-items: center;
@@ -36,160 +26,90 @@ body {
 
     background: #ffffff;
 
-    border-bottom: 1px solid #e5eaf2;
+    border-bottom: 1px solid #e1ebe7;
 
-    box-shadow: 0 3px 15px rgba(13, 71, 161, 0.08);
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
 }
-
-
-/* =========================================
-   NAVIGATION LEFT
-========================================= */
 
 .nav-left {
     display: flex;
     align-items: center;
-}
-
-.nav-left h1 {
-    font-size: 24px;
-
-    font-weight: 750;
-
-    color: #0d47a1;
-
-    letter-spacing: -0.5px;
-
-    position: relative;
-}
-
-
-/* Small blue accent */
-
-.nav-left h1::after {
-    content: "";
-
-    display: block;
-
-    width: 32px;
-    height: 3px;
-
-    margin-top: 5px;
-
-    background: #1976d2;
-
-    border-radius: 10px;
-}
-
-
-/* =========================================
-   NAVIGATION RIGHT
-========================================= */
-
-.nav-right {
-    display: flex;
-
-    align-items: center;
-
     gap: 12px;
 }
 
+.nav-left .vjec-logo {
+    width: 48px;
+    height: 48px;
 
-/* Welcome message */
+    object-fit: contain;
+}
+
+.nav-left h1 {
+    color: #17483c;
+    font-size: 21px;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
 .nav-right span {
-    color: #667085;
-
-    font-size: 14px;
-
-    font-weight: 500;
-
-    margin-right: 5px;
+    color: #687d77;
+    font-size: 13px;
 }
-
-
-/* =========================================
-   NAVIGATION LINKS
-========================================= */
 
 .nav-link {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-width: 82px;
-
-    padding: 9px 17px;
-
     text-decoration: none;
 
-    color: #0d47a1;
+    color: #17483c;
 
-    background: #f4f8ff;
+    padding: 9px 18px;
 
-    border: 1px solid #d9e6fa;
+    border: 1px solid #d8e6e1;
 
-    border-radius: 8px;
+    border-radius: 20px;
 
-    font-size: 14px;
+    font-size: 12px;
 
-    font-weight: 600;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    transition: 0.3s;
 }
-
-
-/* Hover */
 
 .nav-link:hover {
-    background: #0d47a1;
-
-    color: #ffffff;
-
-    border-color: #0d47a1;
-
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 5px 14px rgba(13, 71, 161, 0.20);
+    background: #62b3a5;
+    color: white;
+    border-color: #62b3a5;
 }
 
 
-/* =========================================
-   HERO HEADER
-========================================= */
+/* =========================
+   HERO
+========================= */
 
 header {
-    position: relative;
+    min-height: 270px;
 
-    background:
-        linear-gradient(135deg,
-            #063b9c,
-            #0d47a1,
-            #1976d2);
-
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     text-align: center;
 
-    padding: 70px 20px;
+    padding: 40px 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg,
+            #17483c,
+            #286456);
+
+    position: relative;
 
     overflow: hidden;
 }
-
-
-/* Decorative circle */
 
 header::before {
     content: "";
@@ -201,398 +121,299 @@ header::before {
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.04);
 
-    top: -150px;
     left: -100px;
+    top: -150px;
 }
-
-
-/* Decorative circle */
 
 header::after {
     content: "";
 
     position: absolute;
 
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
 
-    right: -150px;
-    bottom: -200px;
+    right: -80px;
+    bottom: -130px;
 }
-
-
-/* Hero title */
 
 header h1 {
-    position: relative;
-
-    z-index: 2;
-
-    font-size: 42px;
-
+    font-size: 38px;
     margin-bottom: 12px;
 
-    font-weight: 700;
-
-    letter-spacing: -1px;
+    position: relative;
+    z-index: 2;
 }
-
-
-/* Hero subtitle */
 
 header p {
+    color: #c4ddd7;
+
+    font-size: 14px;
+
     position: relative;
-
     z-index: 2;
-
-    font-size: 17px;
-
-    opacity: 0.9;
 }
 
 
-/* =========================================
-   MAIN CONTAINER
-========================================= */
+/* =========================
+   MAIN CONTENT
+========================= */
 
 .container {
     width: 90%;
+    max-width: 1100px;
 
-    max-width: 1150px;
-
-    margin: 55px auto;
+    margin: 45px auto;
 }
 
 
-/* =========================================
+/* =========================
    TITLE
-========================================= */
+========================= */
 
 .title {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 
 .title h2 {
-    color: #172033;
+    color: #17483c;
 
-    font-size: 30px;
+    font-size: 27px;
 
     margin-bottom: 8px;
 }
 
 .title p {
-    color: #748096;
+    color: #71847e;
 
-    font-size: 15px;
+    font-size: 13px;
 }
 
 
-/* =========================================
+/* =========================
    TABLE
-========================================= */
+========================= */
 
 .table-container {
-    background: #ffffff;
+    background: white;
 
-    border-radius: 16px;
+    border-radius: 18px;
 
-    overflow: hidden;
-
-    border: 1px solid #e5eaf2;
+    overflow-x: auto;
 
     box-shadow:
-        0 10px 35px rgba(13, 71, 161, 0.08);
+        0 10px 30px rgba(27, 74, 62, 0.08);
 }
 
 table {
     width: 100%;
 
     border-collapse: collapse;
+
+    min-width: 650px;
 }
 
 
-/* =========================================
-   TABLE HEADER
-========================================= */
+/* Table header */
 
 thead {
-    background: #0d47a1;
+    background: #1b4a3e;
 }
 
 th {
-    color: #ffffff;
-
-    padding: 18px 20px;
+    color: white;
 
     text-align: left;
 
-    font-size: 14px;
+    padding: 17px 20px;
 
-    font-weight: 600;
+    font-size: 12px;
 }
 
 
-/* =========================================
-   TABLE ROWS
-========================================= */
+/* Table body */
 
-tbody tr {
-    transition: background 0.2s ease;
+td {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #edf1ef;
+
+    font-size: 13px;
 }
 
 tbody tr:hover {
-    background: #f5f8ff;
-}
-
-td {
-    padding: 19px 20px;
-
-    border-bottom: 1px solid #edf0f5;
-
-    font-size: 15px;
-}
-
-tbody tr:last-child td {
-    border-bottom: none;
+    background: #f7faf9;
 }
 
 
-/* =========================================
-   FOOD NAME
-========================================= */
+/* =========================
+   FOOD
+========================= */
 
 .food-name {
-    font-size: 16px;
+    color: #183d34;
 
     font-weight: 600;
-
-    color: #172033;
 }
 
 
-/* =========================================
+/* =========================
    CATEGORY
-========================================= */
+========================= */
 
 .category {
     display: inline-block;
 
+    background: #e8f3ef;
+
+    color: #4d897b;
+
     padding: 6px 12px;
-
-    background: #edf4ff;
-
-    color: #0d47a1;
 
     border-radius: 20px;
 
-    font-size: 13px;
-
-    font-weight: 600;
+    font-size: 11px;
 }
 
 
-/* =========================================
+/* =========================
    PRICE
-========================================= */
+========================= */
 
 .price {
-    color: #0d47a1;
+    color: #2d8b78;
 
-    font-size: 16px;
-
-    font-weight: 700;
+    font-weight: bold;
 }
 
 
-/* =========================================
+/* =========================
    STOCK
-========================================= */
+========================= */
 
 .stock {
-    color: #39445a;
-
-    font-weight: 600;
+    color: #536b64;
 }
 
 
-/* =========================================
-   AVAILABLE
-========================================= */
+/* =========================
+   STATUS
+========================= */
 
 .available {
     display: inline-block;
 
-    padding: 7px 12px;
+    background: #e7f6ee;
 
-    background: #eaf8f0;
+    color: #299366;
 
-    color: #138a4b;
+    padding: 6px 12px;
 
     border-radius: 20px;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    font-weight: 600;
+    font-weight: bold;
 }
-
-
-/* =========================================
-   OUT OF STOCK
-========================================= */
 
 .out-stock {
     display: inline-block;
 
-    padding: 7px 12px;
+    background: #f9e9e7;
 
-    background: #fff0f0;
+    color: #c45d52;
 
-    color: #d63939;
+    padding: 6px 12px;
 
     border-radius: 20px;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    font-weight: 600;
+    font-weight: bold;
 }
 
 
-/* =========================================
-   EMPTY TABLE
-========================================= */
+/* =========================
+   EMPTY
+========================= */
 
 .empty {
     text-align: center;
 
-    padding: 50px 20px;
+    padding: 50px;
 
-    color: #8993a4;
+    color: #82928d;
 }
 
 
-/* =========================================
+/* =========================
    FOOTER
-========================================= */
+========================= */
 
 footer {
-    margin-top: 80px;
-
-    background: #101a2f;
-
-    color: #aeb8ca;
-
     text-align: center;
 
-    padding: 25px 20px;
-}
+    padding: 30px;
 
-footer p {
-    font-size: 14px;
-}
+    background-color: #007554;
 
+    color: #ffffff;
 
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 800px) {
-
-    .navbar {
-        padding: 0 4%;
-    }
-
-    .nav-left h1 {
-        font-size: 20px;
-    }
-
-    .nav-right span {
-        display: none;
-    }
-
-    .nav-link {
-        padding: 8px 13px;
-    }
-
-    header {
-        padding: 55px 20px;
-    }
-
-    header h1 {
-        font-size: 32px;
-    }
-
-    .container {
-        width: 94%;
-    }
-
-    .table-container {
-        overflow-x: auto;
-    }
-
-    table {
-        min-width: 700px;
-    }
+    font-size: 11px;
 }
 
 
-/* =========================================
+/* =========================
    MOBILE
-========================================= */
+========================= */
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
 
     .navbar {
         height: auto;
 
-        min-height: 65px;
+        padding: 15px 5%;
 
-        padding: 12px 4%;
-    }
+        flex-direction: column;
 
-    .nav-left h1 {
-        font-size: 17px;
-    }
-
-    .nav-left h1::after {
-        width: 25px;
-        height: 2px;
+        gap: 12px;
     }
 
     .nav-right {
-        gap: 6px;
-    }
+        justify-content: center;
 
-    .nav-link {
-        min-width: auto;
-
-        padding: 7px 10px;
-
-        font-size: 12px;
+        flex-wrap: wrap;
     }
 
     header {
-        padding: 45px 15px;
+        min-height: 220px;
     }
 
     header h1 {
-        font-size: 27px;
+        font-size: 28px;
     }
 
     header p {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .container {
+        width: 94%;
+
+        margin: 30px auto;
     }
 
     .title h2 {
         font-size: 23px;
     }
 
-    footer {
-        margin-top: 50px;
+    .table-container {
+        border-radius: 14px;
     }
 }

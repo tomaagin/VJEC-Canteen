@@ -1,264 +1,507 @@
-/* ==============================
+/* =========================================================
+   VJEC CANTEEN PORTAL
+   LOGIN + REGISTER STYLES
+   ========================================================= */
+
+
+/* =========================================================
+   GOOGLE FONT
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
    RESET
-================================= */
+   ========================================================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 
-/* ==============================
-   LOGIN BACKGROUND
-================================= */
+html {
+    scroll-behavior: smooth;
+}
 
-.login-bg {
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   COMMON BACKGROUND
+   ========================================================= */
+
+.login-bg,
+.register-bg {
+
     min-height: 100vh;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    background:
-        radial-gradient(circle at 10% 20%,
-            rgba(0, 198, 255, 0.15),
-            transparent 30%),
-        radial-gradient(circle at 90% 80%,
-            rgba(94, 53, 177, 0.18),
-            transparent 30%),
-        #070b14;
+    padding: 30px;
 
-    color: white;
+    position: relative;
 
     overflow: hidden;
 
-    position: relative;
+    background:
+        radial-gradient(circle at 8% 12%,
+            rgba(116, 190, 173, 0.18) 0,
+            rgba(116, 190, 173, 0.18) 40px,
+            transparent 41px),
+
+        radial-gradient(circle at 18% 7%,
+            rgba(132, 202, 185, 0.10) 0,
+            rgba(132, 202, 185, 0.10) 18px,
+            transparent 19px),
+
+        radial-gradient(circle at 93% 82%,
+            rgba(108, 184, 167, 0.15) 0,
+            rgba(108, 184, 167, 0.15) 75px,
+            transparent 76px),
+
+        radial-gradient(circle at 83% 12%,
+            rgba(255, 255, 255, 0.035) 0,
+            rgba(255, 255, 255, 0.035) 110px,
+            transparent 111px),
+
+        linear-gradient(135deg,
+            #153d34 0%,
+            #1c4b40 48%,
+            #12352e 100%);
 }
 
 
-/* Background decorative circles */
+/* =========================================================
+   BACKGROUND DECORATIONS
+   ========================================================= */
 
-.login-bg::before {
+.login-bg::before,
+.register-bg::before {
+
     content: "";
 
     position: absolute;
 
-    width: 350px;
-    height: 350px;
+    width: 480px;
+    height: 480px;
+
+    left: -250px;
+    bottom: -260px;
 
     border-radius: 50%;
 
-    background: #00c6ff;
+    background: rgba(88, 156, 141, 0.12);
 
-    filter: blur(150px);
-
-    opacity: 0.15;
-
-    top: -150px;
-    left: -100px;
+    pointer-events: none;
 }
 
-.login-bg::after {
+
+.login-bg::after,
+.register-bg::after {
+
     content: "";
 
     position: absolute;
 
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
+
+    right: -140px;
+    top: -160px;
 
     border-radius: 50%;
 
-    background: #7b2cff;
+    background: rgba(94, 164, 149, 0.10);
 
-    filter: blur(150px);
-
-    opacity: 0.15;
-
-    bottom: -150px;
-    right: -100px;
+    pointer-events: none;
 }
 
 
-/* ==============================
-   LOGIN CONTAINER
-================================= */
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
 
-.login-container {
+.login-container,
+.register-container {
 
-    width: 410px;
+    width: min(980px, 95vw);
 
-    padding: 40px;
+    min-height: 570px;
 
     position: relative;
-    z-index: 2;
 
-    background: rgba(255, 255, 255, 0.06);
+    display: grid;
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    grid-template-columns: 53% 47%;
 
-    border-radius: 24px;
+    overflow: hidden;
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px;
+
+    background: rgba(20, 63, 53, 0.96);
 
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.5);
+        0 35px 80px rgba(0, 0, 0, 0.35),
+        0 10px 30px rgba(0, 0, 0, 0.15);
 
+    z-index: 5;
 }
 
 
-/* ==============================
-   HEADER
-================================= */
+/* =========================================================
+   LEFT / LOGO SECTION
+   ========================================================= */
 
-.login-header {
-    text-align: center;
+.login-header,
+.register-header {
 
-    margin-bottom: 32px;
-}
+    min-height: 570px;
 
+    position: relative;
 
-/* Logo */
+    padding: 55px;
 
-.logo {
-
-    width: 60px;
-    height: 60px;
-
-    margin: 0 auto 18px;
+    overflow: hidden;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
 
-    border-radius: 18px;
+    flex-direction: column;
 
-    background: linear-gradient(135deg,
-            #00c6ff,
-            #7b2cff);
+    justify-content: flex-start;
 
-    font-size: 25px;
-    font-weight: 800;
+    align-items: flex-start;
+
+    color: #19483c;
+
+    background:
+        radial-gradient(circle at 80% 25%,
+            rgba(86, 157, 143, 0.15),
+            transparent 23%),
+
+        radial-gradient(circle at 25% 72%,
+            rgba(86, 157, 143, 0.10),
+            transparent 28%),
+
+        #f7fbfa;
+}
+
+
+/* =========================================================
+   CURVED RIGHT EDGE OF LEFT PANEL
+   ========================================================= */
+
+.login-header::after,
+.register-header::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 800px;
+
+    right: -195px;
+    top: -120px;
+
+    border-radius: 50%;
+
+    background: #f7fbfa;
+
+    transform: rotate(-10deg);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   LEFT DECORATIVE CIRCLE
+   ========================================================= */
+
+.login-header::before,
+.register-header::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    left: 80px;
+    top: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(91, 167, 150, 0.12);
 
     box-shadow:
-        0 10px 30px rgba(0, 198, 255, 0.25);
+        0 0 0 30px rgba(91, 167, 150, 0.07),
+        0 0 0 65px rgba(91, 167, 150, 0.035);
+
+    z-index: 0;
 }
 
 
-.login-header h1 {
+/* =========================================================
+   VJEC LOGO
+   ========================================================= */
 
-    font-size: 28px;
+.vjec-logo {
 
-    letter-spacing: 1px;
+    position: relative;
 
-    margin-bottom: 2px;
-}
+    z-index: 5;
 
+    width: 150px;
+    height: 150px;
 
-.login-header h2 {
-
-    font-size: 15px;
-
-    font-weight: 500;
-
-    color: #00c6ff;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-
-.login-header p {
-
-    margin-top: 15px;
-
-    color: #8f98a8;
-
-    font-size: 13px;
-}
-
-
-/* ==============================
-   FORM
-================================= */
-
-.input-group {
-
-    margin-bottom: 20px;
-}
-
-
-.input-group label {
+    object-fit: contain;
 
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 22px;
 
-    color: #d8dce5;
+    filter:
+        drop-shadow(0 8px 14px rgba(0, 0, 0, 0.08));
+}
+
+
+/* =========================================================
+   COLLEGE INFORMATION
+   ========================================================= */
+
+.college-info {
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.college-info h1 {
+
+    color: #17483b;
+
+    font-size: 34px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 5px;
+}
+
+
+.college-info h2 {
+
+    color: #579c8e;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    margin-bottom: 14px;
+}
+
+
+.college-info p {
+
+    color: #718680;
+
+    max-width: 280px;
 
     font-size: 13px;
 
-    font-weight: 500;
+    line-height: 1.7;
 }
 
 
-.input-group input {
+/* =========================================================
+   RIGHT FORM SECTION
+   ========================================================= */
+
+.login-body,
+.register-body {
+
+    position: relative;
+
+    z-index: 5;
+
+    min-height: 570px;
+
+    padding: 55px 55px 110px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(145deg,
+            rgba(28, 75, 64, 0.98),
+            rgba(20, 59, 50, 0.98));
+}
+
+
+.login-body form,
+.register-body form {
 
     width: 100%;
 
-    padding: 14px 15px;
+    max-width: 370px;
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+}
 
-    border-radius: 12px;
+
+/* =========================================================
+   FORM TITLE
+   ========================================================= */
+
+.form-title {
+
+    margin-bottom: 30px;
+}
+
+
+.form-title h2 {
+
+    color: #ffffff;
+
+    font-size: 29px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.form-title p {
+
+    color: #8da59f;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   INPUT GROUP
+   ========================================================= */
+
+.input-group,
+.register-input {
+
+    width: 100%;
+
+    margin-bottom: 19px;
+}
+
+
+.input-group label,
+.register-input label {
+
+    display: block;
+
+    color: #c6d7d3;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    margin-bottom: 8px;
+
+    padding-left: 3px;
+}
+
+
+.input-group input,
+.register-input input {
+
+    width: 100%;
+
+    height: 45px;
+
+    border: 1px solid rgba(255, 255, 255, 0.035);
 
     outline: none;
 
-    background: rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
 
-    color: white;
+    padding: 0 17px;
 
-    font-size: 14px;
+    color: #ffffff;
 
-    transition: 0.3s ease;
+    background: rgba(7, 37, 30, 0.70);
+
+    font-family: 'Inter', Arial, sans-serif;
+
+    font-size: 12px;
+
+    transition:
+        border 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
 
 
-.input-group input::placeholder {
+.input-group input::placeholder,
+.register-input input::placeholder {
 
-    color: #626b7b;
+    color: #6e8981;
 }
 
 
-.input-group input:focus {
+.input-group input:hover,
+.register-input input:hover {
 
-    border-color: #00c6ff;
+    background: rgba(7, 37, 30, 0.82);
+}
+
+
+.input-group input:focus,
+.register-input input:focus {
+
+    background: rgba(6, 33, 27, 0.95);
+
+    border-color: rgba(100, 182, 168, 0.65);
 
     box-shadow:
-        0 0 0 3px rgba(0, 198, 255, 0.08);
+        0 0 0 3px rgba(100, 182, 168, 0.08);
 }
 
 
-/* ==============================
-   OPTIONS
-================================= */
+/* =========================================================
+   LOGIN OPTIONS
+   ========================================================= */
 
 .login-options {
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
 
-    margin: 5px 0 25px;
+    justify-content: space-between;
 
-    font-size: 12px;
+    margin: 5px 3px 22px;
 
-    color: #858e9e;
+    color: #849e97;
+
+    font-size: 10px;
 }
 
 
@@ -269,576 +512,615 @@
     align-items: center;
 
     gap: 7px;
+
+    cursor: pointer;
 }
 
 
 .login-options input {
 
-    accent-color: #00c6ff;
+    width: 12px;
+    height: 12px;
 
     cursor: pointer;
+
+    accent-color: #67b6a8;
 }
 
 
-.login-options a {
+.forgot-password {
 
-    color: #00c6ff;
+    color: #70958c;
+
+    font-size: 9px;
 
     text-decoration: none;
 
-    transition: 0.2s;
+    transition: color 0.3s ease;
 }
 
 
-.login-options a:hover {
+.forgot-password:hover {
 
-    color: white;
+    color: #82c9bb;
 }
 
 
-/* ==============================
+/* =========================================================
    LOGIN BUTTON
-================================= */
+   ========================================================= */
 
-.login-btn {
-
-    width: 100%;
-
-    padding: 14px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: linear-gradient(135deg,
-            #00c6ff,
-            #7b2cff);
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    transition: 0.3s ease;
-}
-
-
-.login-btn span {
-
-    font-size: 20px;
-
-    transition: 0.3s ease;
-}
-
-
-.login-btn:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 12px 30px rgba(0, 198, 255, 0.2);
-}
-
-
-.login-btn:hover span {
-
-    transform: translateX(5px);
-}
-
-
-.login-btn:active {
-
-    transform: translateY(0);
-}
-
-
-/* ==============================
-   FOOTER
-================================= */
-
-.login-footer {
-
-    text-align: center;
-
-    margin-top: 28px;
-
-    padding-top: 25px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-
-.login-footer p {
-
-    color: #727b8b;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 10px;
-}
-
-
-.register-btn {
-
-    color: #00c6ff;
-
-    text-decoration: none;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    transition: 0.2s;
-}
-
-
-.register-btn:hover {
-
-    color: white;
-
-}
-
-
-/* ==============================
-   MOBILE
-================================= */
-
-@media (max-width: 480px) {
-
-    .login-container {
-
-        width: calc(100% - 30px);
-
-        padding: 30px 25px;
-
-    }
-
-    .login-header h1 {
-
-        font-size: 24px;
-
-    }
-
-    .login-options {
-
-        font-size: 11px;
-
-    }
-
-}
-
-
-/* =========================================
-   VJEC CANTEEN - REGISTER PAGE
-========================================= */
-
-.register-bg {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 40px 15px;
-
-    background:
-        radial-gradient(circle at 10% 15%,
-            rgba(0, 198, 255, 0.16),
-            transparent 30%),
-        radial-gradient(circle at 90% 85%,
-            rgba(123, 44, 255, 0.18),
-            transparent 30%),
-        #070b14;
-
-    color: white;
-
-    position: relative;
-
-    overflow-x: hidden;
-}
-
-
-/* =========================================
-   BACKGROUND GLOW
-========================================= */
-
-.register-bg::before {
-    content: "";
-
-    position: fixed;
-
-    width: 350px;
-    height: 350px;
-
-    border-radius: 50%;
-
-    background: #00c6ff;
-
-    filter: blur(150px);
-
-    opacity: 0.12;
-
-    top: -150px;
-    left: -100px;
-
-    pointer-events: none;
-}
-
-
-.register-bg::after {
-    content: "";
-
-    position: fixed;
-
-    width: 350px;
-    height: 350px;
-
-    border-radius: 50%;
-
-    background: #7b2cff;
-
-    filter: blur(150px);
-
-    opacity: 0.12;
-
-    bottom: -150px;
-    right: -100px;
-
-    pointer-events: none;
-}
-
-
-/* =========================================
-   REGISTER CARD
-========================================= */
-
-.register-container {
-
-    width: 430px;
-
-    padding: 40px;
-
-    position: relative;
-
-    z-index: 2;
-
-    background: rgba(255, 255, 255, 0.06);
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-
-    border-radius: 24px;
-
-    backdrop-filter: blur(20px);
-
-    -webkit-backdrop-filter: blur(20px);
-
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.5);
-}
-
-
-/* =========================================
-   HEADER
-========================================= */
-
-.register-header {
-    text-align: center;
-
-    margin-bottom: 30px;
-}
-
-
-.register-logo {
-
-    width: 60px;
-    height: 60px;
-
-    margin: 0 auto 18px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 18px;
-
-    background: linear-gradient(135deg,
-            #00c6ff,
-            #7b2cff);
-
-    font-size: 25px;
-
-    font-weight: 800;
-
-    box-shadow:
-        0 10px 30px rgba(0, 198, 255, 0.25);
-}
-
-
-.register-header h1 {
-
-    font-size: 28px;
-
-    letter-spacing: 1px;
-
-    margin: 0 0 2px;
-}
-
-
-.register-header h2 {
-
-    font-size: 14px;
-
-    font-weight: 500;
-
-    color: #00c6ff;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    margin: 0;
-}
-
-
-.register-header p {
-
-    margin-top: 14px;
-
-    color: #8f98a8;
-
-    font-size: 13px;
-}
-
-
-/* =========================================
-   FORM INPUTS
-========================================= */
-
-.register-input {
-
-    margin-bottom: 18px;
-}
-
-
-.register-input label {
-
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: #d8dce5;
-
-    font-size: 13px;
-
-    font-weight: 500;
-}
-
-
-.register-input input {
-
-    width: 100%;
-
-    padding: 13px 15px;
-
-    border: 1px solid rgba(255, 255, 255, 0.10);
-
-    border-radius: 11px;
-
-    outline: none;
-
-    background: rgba(0, 0, 0, 0.25);
-
-    color: white;
-
-    font-size: 14px;
-
-    transition: all 0.3s ease;
-}
-
-
-.register-input input::placeholder {
-
-    color: #626b7b;
-}
-
-
-.register-input input:hover {
-
-    border-color: rgba(255, 255, 255, 0.20);
-}
-
-
-.register-input input:focus {
-
-    border-color: #00c6ff;
-
-    background: rgba(0, 0, 0, 0.32);
-
-    box-shadow:
-        0 0 0 3px rgba(0, 198, 255, 0.08);
-}
-
-
-/* =========================================
-   REGISTER BUTTON
-========================================= */
-
+.login-btn,
 .register-submit {
 
     width: 100%;
 
-    margin-top: 5px;
-
-    padding: 14px;
+    height: 46px;
 
     border: none;
 
-    border-radius: 12px;
+    border-radius: 25px;
 
-    background: linear-gradient(135deg,
-            #00c6ff,
-            #7b2cff);
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: 700;
+    outline: none;
 
     cursor: pointer;
 
-    display: flex;
+    color: #ffffff;
 
-    align-items: center;
+    background:
+        linear-gradient(90deg,
+            #63b5a7,
+            #4b9c8e);
 
-    justify-content: center;
+    font-family: 'Inter', Arial, sans-serif;
 
-    gap: 10px;
+    font-size: 12px;
 
-    transition: all 0.3s ease;
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 22px rgba(71, 145, 132, 0.20);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
 
+.login-btn span,
 .register-submit span {
 
-    font-size: 20px;
+    display: inline-block;
 
-    transition: transform 0.3s ease;
+    margin-left: 9px;
+
+    font-size: 16px;
+
+    transition: margin-left 0.3s ease;
 }
 
 
+.login-btn:hover,
 .register-submit:hover {
 
     transform: translateY(-2px);
 
+    background:
+        linear-gradient(90deg,
+            #74c5b7,
+            #55a899);
+
     box-shadow:
-        0 12px 30px rgba(0, 198, 255, 0.22);
+        0 13px 28px rgba(71, 145, 132, 0.30);
 }
 
 
+.login-btn:hover span,
 .register-submit:hover span {
 
-    transform: translateX(5px);
+    margin-left: 15px;
 }
 
 
+.login-btn:active,
 .register-submit:active {
 
     transform: translateY(0);
 }
 
 
-/* =========================================
-   LOGIN FOOTER
-========================================= */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
+.login-footer,
 .register-footer {
 
+    position: absolute;
+
+    right: 55px;
+
+    bottom: 38px;
+
+    width: calc(47% - 110px);
+
+    z-index: 20;
+
     text-align: center;
-
-    margin-top: 26px;
-
-    padding-top: 22px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 
+.login-footer p,
 .register-footer p {
 
-    color: #727b8b;
+    color: #78938c;
 
-    font-size: 11px;
+    font-size: 8px;
 
-    letter-spacing: 1px;
+    font-weight: 500;
 
-    margin-bottom: 9px;
+    letter-spacing: 1.3px;
+
+    margin-bottom: 7px;
 }
 
 
+.login-footer a,
 .register-footer a {
 
-    color: #00c6ff;
+    color: #66b6a8;
+
+    font-size: 10px;
+
+    font-weight: 500;
 
     text-decoration: none;
 
-    font-size: 14px;
-
-    font-weight: 600;
-
-    transition: 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 
+.login-footer a:hover,
 .register-footer a:hover {
 
-    color: white;
+    color: #9bd8cf;
+
+    text-decoration: underline;
 }
 
 
-/* =========================================
+/* =========================================================
+   REGISTER PAGE
+   ========================================================= */
+
+.register-container {
+
+    min-height: 650px;
+}
+
+
+.register-header {
+
+    min-height: 650px;
+}
+
+
+.register-body {
+
+    min-height: 650px;
+
+    padding-top: 45px;
+}
+
+
+.register-input {
+
+    margin-bottom: 14px;
+}
+
+
+.register-body .form-title {
+
+    margin-bottom: 22px;
+}
+
+
+.register-body .form-title h2 {
+
+    font-size: 26px;
+}
+
+
+.register-footer {
+
+    bottom: 35px;
+}
+
+
+/* =========================================================
+   FORM VALIDATION
+   ========================================================= */
+
+.input-group input:valid,
+.register-input input:valid {
+
+    /* Keeps the clean design after valid input */
+}
+
+
+.input-group input:invalid:not(:placeholder-shown),
+.register-input input:invalid:not(:placeholder-shown) {
+
+    border-color: rgba(220, 100, 100, 0.55);
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+
+    background: #5ba99a;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 7px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #14372f;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: #4c8f82;
+
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #63b5a7;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .login-bg,
+    .register-bg {
+
+        padding: 20px;
+    }
+
+
+    .login-container,
+    .register-container {
+
+        width: min(550px, 95vw);
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        border-radius: 25px;
+    }
+
+
+    /* Left section */
+
+    .login-header,
+    .register-header {
+
+        min-height: 270px;
+
+        padding: 35px;
+
+        justify-content: flex-start;
+    }
+
+
+    .login-header::after,
+    .register-header::after {
+
+        display: none;
+    }
+
+
+    .login-header::before,
+    .register-header::before {
+
+        width: 180px;
+
+        height: 180px;
+
+        left: auto;
+
+        right: 35px;
+
+        top: 45px;
+    }
+
+
+    .vjec-logo {
+
+        width: 90px;
+
+        height: 90px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .college-info h1 {
+
+        font-size: 27px;
+    }
+
+
+    .college-info h2 {
+
+        font-size: 15px;
+    }
+
+
+    .college-info p {
+
+        font-size: 11px;
+
+        max-width: 250px;
+    }
+
+
+    /* Right section */
+
+    .login-body,
+    .register-body {
+
+        min-height: 430px;
+
+        padding: 40px 35px 100px;
+    }
+
+
+    .login-body form,
+    .register-body form {
+
+        max-width: 100%;
+    }
+
+
+    /* Footer */
+
+    .login-footer,
+    .register-footer {
+
+        width: calc(100% - 70px);
+
+        right: 35px;
+
+        bottom: 32px;
+    }
+
+
+    .register-container,
+    .register-header,
+    .register-body {
+
+        min-height: auto;
+    }
+
+
+    .register-header {
+
+        min-height: 260px;
+    }
+
+
+    .register-body {
+
+        min-height: 480px;
+    }
+}
+
+
+/* =========================================================
    MOBILE
-========================================= */
+   ========================================================= */
 
 @media (max-width: 480px) {
 
+    .login-bg,
     .register-bg {
-        padding: 25px 15px;
+
+        padding: 12px;
     }
 
+
+    .login-container,
     .register-container {
 
         width: 100%;
 
-        padding: 30px 25px;
-
-        border-radius: 20px;
+        border-radius: 22px;
     }
 
-    .register-header h1 {
+
+    .login-header,
+    .register-header {
+
+        min-height: 235px;
+
+        padding: 28px;
+    }
+
+
+    .vjec-logo {
+
+        width: 75px;
+
+        height: 75px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .college-info h1 {
 
         font-size: 24px;
     }
 
-    .register-header h2 {
 
-        font-size: 12px;
+    .college-info h2 {
 
-        letter-spacing: 1.5px;
+        font-size: 14px;
+
+        margin-bottom: 8px;
     }
 
+
+    .college-info p {
+
+        font-size: 10px;
+
+        max-width: 220px;
+    }
+
+
+    .login-body,
+    .register-body {
+
+        padding: 32px 25px 100px;
+
+        min-height: 420px;
+    }
+
+
+    .form-title {
+
+        margin-bottom: 25px;
+    }
+
+
+    .form-title h2 {
+
+        font-size: 25px;
+    }
+
+
+    .form-title p {
+
+        font-size: 10px;
+    }
+
+
+    .input-group,
+    .register-input {
+
+        margin-bottom: 17px;
+    }
+
+
+    .input-group input,
+    .register-input input {
+
+        height: 44px;
+
+        font-size: 11px;
+    }
+
+
+    .login-options {
+
+        font-size: 9px;
+    }
+
+
+    .forgot-password {
+
+        font-size: 8px;
+    }
+
+
+    .login-btn,
+    .register-submit {
+
+        height: 45px;
+
+        font-size: 11px;
+    }
+
+
+    .login-footer,
+    .register-footer {
+
+        width: calc(100% - 50px);
+
+        right: 25px;
+
+        bottom: 32px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .login-header,
+    .register-header {
+
+        padding: 23px;
+
+        min-height: 220px;
+    }
+
+
+    .vjec-logo {
+
+        width: 65px;
+
+        height: 65px;
+    }
+
+
+    .college-info h1 {
+
+        font-size: 22px;
+    }
+
+
+    .login-body,
+    .register-body {
+
+        padding: 28px 20px 95px;
+    }
+
+
+    .login-footer,
+    .register-footer {
+
+        width: calc(100% - 40px);
+
+        right: 20px;
+    }
 }

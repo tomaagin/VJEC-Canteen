@@ -9,51 +9,99 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>College Canteen</title>
+    <title>VJEC Canteen</title>
 
-    <link rel="stylesheet" href="{% static 'styles/home.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}?v=3">
 
 </head>
+
 
 <body>
 
 
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <nav class="navbar">
+
         <div class="nav-left">
-            <h1>VJEC Canteen</h1>
+
+            <img src="{% static 'images/vjec-logo.png' %}" alt="VJEC Logo" class="vjec-logo">
+
+            <h1>
+                VJEC Canteen
+            </h1>
+
         </div>
+
+
         <div class="nav-right">
+
             {% if user.is_authenticated %}
-            <span>Welcome, {{ user.username }}!</span>
-            <a href="{% url 'login' %}" class="nav-link">Logout</a>
+
+            <span>
+                Welcome, {{ user.username }}!
+            </span>
+
+            <a href="{% url 'login' %}" class="nav-link">
+                Logout
+            </a>
+
             {% else %}
-            <a href="{% url 'login' %}" class="nav-link">Login</a>
-            <a href="{% url 'register' %}" class="nav-link">Register</a>
+
+            <a href="{% url 'login' %}" class="nav-link">
+                Login
+            </a>
+
+            <a href="{% url 'register' %}" class="nav-link">
+                Register
+            </a>
+
             {% endif %}
+
         </div>
+
     </nav>
 
 
-    <!-- Header -->
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
 
     <header>
 
-        <h1>🍴 College Canteen</h1>
+        <div>
 
-        <p>
-            Fresh Food • Affordable Prices • Great Taste
-        </p>
+            <h1>
+                🍴 College Canteen
+            </h1>
+
+            <p>
+                Fresh Food • Affordable Prices • Great Taste
+            </p>
+
+        </div>
 
     </header>
 
 
-    <!-- Main Content -->
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
     <main class="container">
 
+
+        <!-- Page Title -->
+
         <div class="title">
 
-            <h2>Today's Food Menu</h2>
+            <h2>
+                Today's Food Menu
+            </h2>
 
             <p>
                 Check the available food items and their prices.
@@ -62,32 +110,57 @@
         </div>
 
 
-        <!-- Food Table -->
+
+        <!-- =========================
+             FOOD TABLE
+        ========================== -->
 
         <div class="table-container">
 
             <table>
 
+
+                <!-- Table Header -->
+
                 <thead>
 
                     <tr>
 
-                        <th>Food Name</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Status</th>
+                        <th>
+                            Food Name
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Price
+                        </th>
+
+                        <th>
+                            Stock
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
 
                     </tr>
 
                 </thead>
 
 
+
+                <!-- Table Body -->
+
                 <tbody>
+
 
                     {% for food in food_items %}
 
                     <tr>
+
 
                         <!-- Food Name -->
 
@@ -99,6 +172,8 @@
 
                         </td>
 
+
+
                         <!-- Category -->
 
                         <td>
@@ -108,6 +183,7 @@
                             </span>
 
                         </td>
+
 
 
                         <!-- Price -->
@@ -121,6 +197,7 @@
                         </td>
 
 
+
                         <!-- Stock -->
 
                         <td>
@@ -130,6 +207,7 @@
                             </span>
 
                         </td>
+
 
 
                         <!-- Status -->
@@ -152,22 +230,26 @@
 
                         </td>
 
+
                     </tr>
 
 
                     {% empty %}
 
+
+                    <!-- No Food Items -->
+
                     <tr>
 
                         <td colspan="5" class="empty">
-
                             No food items are currently available.
-
                         </td>
 
                     </tr>
 
+
                     {% endfor %}
+
 
                 </tbody>
 
@@ -178,15 +260,19 @@
     </main>
 
 
-    <!-- Footer -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
         <p>
-            © 2026 College Canteen
+            © 2026 VJEC Canteen
         </p>
 
     </footer>
+
 
 </body>
 
