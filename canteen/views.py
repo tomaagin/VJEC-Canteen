@@ -27,4 +27,4 @@ def register(request):
 
 def home(request):
     food_items = StockItem.objects.all()
-    return render(request, 'home.html', {'food_items': food_items})
+    return render(request, 'home.html', {'food_items': food_items})
